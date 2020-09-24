@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/add-event" method="POST">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="attendees">Attendees</label>
+        <input type="number" name="attendees" id="attendees">
+
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location">
+
+        <label for="description">Description</label>
+        <textarea type="text" name="description" id="description" cols="30" rows="2">
+
+        <input type="submit" value="Add Event">
+    </form>
+
+
+<ul>
+    {% for event in events %}
+        <li>
+            {{event.date}}:
+            <br>
+            {{event.name}}:
+            <br>
+            {{event.attendees}}:
+            <br>
+            {{event.location}}:
+            <br>
+            {{event.description}}
+        </li>
+    {% endfor %}
+</ul>    
+
+{% endblock %}
