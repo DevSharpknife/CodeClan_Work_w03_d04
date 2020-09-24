@@ -20,6 +20,11 @@
 
     <label for="description">Description</label>
     <input type="text" name="description" id="description"><span>   </span>
+    <br>
+
+    <label for="recurring">Recurring</label>
+    <input type="checkbox" name="Recurring" id="recurring">
+    <br>
     
 
     <input type="submit" value="Add Event">
@@ -37,7 +42,14 @@
         <br>
         {{event.location}}:
         <br>
-        {{event.description}}
+        {{event.description}}:
+        <br>
+        
+        {%  if event.recurring  %}
+        <span> Event is recurring</span>
+        {%  endif  %}
+        
+            
     </li>
     {% endfor %}
 </ul>    

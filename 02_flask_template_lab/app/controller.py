@@ -16,8 +16,9 @@ def add_new_event():
     attendees = request.form['attendees']
     location = request.form['location']
     description = request.form['description']
+    recurring = request.form['recurring']
 
-    new_event = Event(date, name, attendees, location, description)
+    new_event = Event(date, name, attendees, location, description, recurring)
     add_event(new_event)
 
     return redirect('/')
