@@ -6,6 +6,3 @@ class Event():
         self.attendees = attendees
         self.location = location
         self.description = description
-
-    
-        
